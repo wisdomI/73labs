@@ -1,0 +1,542 @@
+// "use client";
+// import {
+//   useScroll,
+//   useMotionValueEvent,
+//   useTransform,
+//   motion,
+// } from "framer-motion";
+// import Image from "next/image";
+// import React, { useRef } from "react";
+
+// export default function ServicesPage() {
+//   const services = [
+//     {
+//       id: 1,
+//       title: "AI-Powered Business Solutions",
+//       description: `Seamless automation. AI Chatbots & Virtual Assistants: Automate
+//       customer interactions in multiple languages. Personalized,
+//       responsive, always on. AI-powered CRM & Sales Optimization:
+//       Predict customer behavior, automate follow-ups, and close more
+//       deals. AI-driven Marketing Automation: Hyper-personalized email
+//       and ad campaigns powered by machine learning. AI-based Customer
+//       Insights & Analytics: Understand your customers like never
+//       before. Make data-driven decisions in real time.`,
+//       image: "/hero-image.png",
+//     },
+//     {
+//       id: 2,
+//       title: "Smart Virtual Assistants",
+//       description: `Transform customer service with 24/7 AI-powered assistants.
+//       Instantly respond to queries, book appointments, and streamline
+//       support.`,
+//       image: "/hero-image.png",
+//     },
+//     {
+//       id: 3,
+//       title: "Sales Forecasting Tools",
+//       description: `Use AI to predict customer buying patterns and optimize sales
+//       funnels. Make informed decisions backed by data trends.`,
+//       image: "/hero-image.png",
+//     },
+//     {
+//       id: 4,
+//       title: "AI-Driven Analytics",
+//       description: `Visualize real-time data to monitor performance, spot trends, and
+//       optimize strategies. AI that interprets data like a pro.`,
+//       image: "/hero-image.png",
+//     },
+//     {
+//       id: 5,
+//       title: "Marketing Automation",
+//       description: `Let AI personalize your campaigns. Target the right audience with
+//       the right message at the right time.`,
+//       image: "/hero-image.png",
+//     },
+//     {
+//       id: 6,
+//       title: "Language AI for Global Reach",
+//       description: `Break barriers with multilingual chatbots, translation tools, and
+//       global customer support—all powered by AI.`,
+//       image: "/hero-image.png",
+//     },
+//   ];
+
+//   const containerRef = useRef(null);
+//   const { scrollY } = useScroll();
+
+//   // For debugging purposes
+//   useMotionValueEvent(scrollY, "change", (latest) => {
+//     console.log("Scroll Y:", latest);
+//   });
+
+//   // Transform for the header
+//   const headerScale = useTransform(scrollY, [0, 300], [1, 0.5]);
+//   const headerOpacity = useTransform(scrollY, [0, 100], [1, 0]);
+
+//   return (
+//     <div className="relative w-full min-h-screen ">
+//       {/* Fixed header that scales and fades on scroll */}
+//       <motion.div
+//         style={{ scale: headerScale, opacity: headerOpacity }}
+//         className="fixed top-0 left-0 w-full flex justify-center items-center pt-20 z-50"
+//       >
+//         <h1 className="text-5xl font-bold text-white">Our Services</h1>
+//       </motion.div>
+
+//       {/* Spacer to push content below the header */}
+//       <div className="h-40"></div>
+
+//       {/* Main content container */}
+//       <div ref={containerRef} className="container mx-auto px-4 py-16">
+//         {/* Services stacking section */}
+//         <div className="relative mt-20 space-y-64">
+//           {services.map((service, idx) => (
+//             <div key={service.id} className="relative h-96">
+//               <motion.div
+//                 initial={{ opacity: 0, y: 300 }}
+//                 whileInView={{ opacity: 1, y: 0 }}
+//                 transition={{ duration: 0.2 }}
+//                 viewport={{ once: false, margin: "-500px" }}
+//                 className="sticky top-0 bg-white/10 backdrop-blur-sm rounded-2xl p-8 shadow-xl"
+//               >
+//                 <div className="flex flex-col md:flex-row gap-8 items-center">
+//                   {idx % 2 === 0 ? (
+//                     <>
+//                       <div className="flex-1 space-y-4">
+//                         <h2 className="text-2xl font-bold text-white">{service.title}</h2>
+//                         <p className="text-gray-200 text-base md:text-lg">{service.description}</p>
+//                       </div>
+//                       <div className="flex-shrink-0">
+//                         <Image
+//                           src={service.image}
+//                           alt={service.title}
+//                           width={300}
+//                           height={300}
+//                           className="rounded-2xl"
+//                         />
+//                       </div>
+//                     </>
+//                   ) : (
+//                     <>
+//                       <div className="flex-shrink-0">
+//                         <Image
+//                           src={service.image}
+//                           alt={service.title}
+//                           width={300}
+//                           height={300}
+//                           className="rounded-2xl"
+//                         />
+//                       </div>
+//                       <div className="flex-1 space-y-4">
+//                         <h2 className="text-2xl font-bold text-white">{service.title}</h2>
+//                         <p className="text-gray-200 text-base md:text-lg">{service.description}</p>
+//                       </div>
+//                     </>
+//                   )}
+//                 </div>
+//               </motion.div>
+//             </div>
+//           ))}
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
+
+// Claud AI
+// "use client";
+// import {
+//   useScroll,
+//   useMotionValueEvent,
+//   useTransform,
+//   motion,
+// } from "framer-motion";
+// import Image from "next/image";
+// import React, { useRef } from "react";
+
+// export default function ServicesPage() {
+//   const services = [
+//     {
+//       id: 1,
+//       title: "AI-Powered Business Solutions",
+//       description: `Seamless automation. AI Chatbots & Virtual Assistants: Automate
+//       customer interactions in multiple languages. Personalized,
+//       responsive, always on. AI-powered CRM & Sales Optimization:
+//       Predict customer behavior, automate follow-ups, and close more
+//       deals. AI-driven Marketing Automation: Hyper-personalized email
+//       and ad campaigns powered by machine learning. AI-based Customer
+//       Insights & Analytics: Understand your customers like never
+//       before. Make data-driven decisions in real time.`,
+//       image: "/hero-image.png",
+//     },
+//     {
+//       id: 2,
+//       title: "Smart Virtual Assistants",
+//       description: `Transform customer service with 24/7 AI-powered assistants.
+//       Instantly respond to queries, book appointments, and streamline
+//       support.`,
+//       image: "/hero-image.png",
+//     },
+//     {
+//       id: 3,
+//       title: "Sales Forecasting Tools",
+//       description: `Use AI to predict customer buying patterns and optimize sales
+//       funnels. Make informed decisions backed by data trends.`,
+//       image: "/hero-image.png",
+//     },
+//     {
+//       id: 4,
+//       title: "AI-Driven Analytics",
+//       description: `Visualize real-time data to monitor performance, spot trends, and
+//       optimize strategies. AI that interprets data like a pro.`,
+//       image: "/hero-image.png",
+//     },
+//     {
+//       id: 5,
+//       title: "Marketing Automation",
+//       description: `Let AI personalize your campaigns. Target the right audience with
+//       the right message at the right time.`,
+//       image: "/hero-image.png",
+//     },
+//     {
+//       id: 6,
+//       title: "Language AI for Global Reach",
+//       description: `Break barriers with multilingual chatbots, translation tools, and
+//       global customer support—all powered by AI.`,
+//       image: "/hero-image.png",
+//     },
+//   ];
+
+//   const containerRef = useRef(null);
+//   const { scrollY } = useScroll();
+
+//   // For debugging purposes
+//   useMotionValueEvent(scrollY, "change", (latest) => {
+//     console.log("Scroll Y:", latest);
+//   });
+
+//   // Transform for the header
+//   const headerScale = useTransform(scrollY, [0, 500], [1, 0.8]);
+//   const headerOpacity = useTransform(scrollY, [0, 100], [1, 0]);
+
+//   return (
+//     <div className="relative w-full min-h-screen">
+//       {/* Fixed header that scales and fades on scroll */}
+//       <motion.div
+//         style={{ scale: headerScale, opacity: headerOpacity }}
+//         className="fixed top-0 left-0 w-full flex justify-center items-center pt-20 z-50"
+//       >
+//         <h1 className="text-5xl font-bold text-white">Our Services</h1>
+//       </motion.div>
+
+//       {/* Main content container */}
+//       <div className="pt-36" /> {/* Spacer for fixed header */}
+
+//       {/* Services stacking container */}
+//       <div ref={containerRef} className="relative container mx-auto px-4">
+//         {services.map((service, idx) => (
+//           <div
+//             key={service.id}
+//             className="h-screen flex items-center justify-center"
+//             style={{
+//               position: "sticky",
+//               top: `${idx * 10}vh`,
+//               zIndex: services.length - idx,
+//             }}
+//           >
+//             <motion.div
+//               initial={{ opacity: 0, y: 100 }}
+//               whileInView={{ opacity: 1, y: 0 }}
+//               transition={{ duration: 0.5 }}
+//               viewport={{ once: false, amount: 0.4 }}
+//               className="w-full max-w-5xl bg-white/10 backdrop-blur-sm rounded-2xl p-8 shadow-xl"
+//             >
+//               <div className="flex flex-col md:flex-row gap-8 items-center">
+//                 {idx % 2 === 0 ? (
+//                   <>
+//                     <div className="flex-1 space-y-4">
+//                       <h2 className="text-2xl font-bold text-white">{service.title}</h2>
+//                       <p className="text-gray-200 text-base md:text-lg">{service.description}</p>
+//                     </div>
+//                     <div className="flex-shrink-0">
+//                       <Image
+//                         src={service.image}
+//                         alt={service.title}
+//                         width={300}
+//                         height={300}
+//                         className="rounded-2xl"
+//                       />
+//                     </div>
+//                   </>
+//                 ) : (
+//                   <>
+//                     <div className="flex-shrink-0">
+//                       <Image
+//                         src={service.image}
+//                         alt={service.title}
+//                         width={300}
+//                         height={300}
+//                         className="rounded-2xl"
+//                       />
+//                     </div>
+//                     <div className="flex-1 space-y-4">
+//                       <h2 className="text-2xl font-bold text-white">{service.title}</h2>
+//                       <p className="text-gray-200 text-base md:text-lg">{service.description}</p>
+//                     </div>
+//                   </>
+//                 )}
+//               </div>
+//             </motion.div>
+//           </div>
+//         ))}
+
+//         {/* Bottom spacer */}
+//         <div className="h-screen" />
+//       </div>
+//     </div>
+//   );
+// }
+
+// "use client";
+// import {
+//   useScroll,
+//   useMotionValueEvent,
+//   useTransform,
+//   motion,
+// } from "framer-motion";
+// import Image from "next/image";
+// import React, { useRef } from "react";
+
+// export default function ServicesPage() {
+//   const services = [
+//     {
+//       id: 1,
+//       title: "AI-Powered Business Solutions",
+//       description: `Seamless automation. AI Chatbots & Virtual Assistants: Automate
+//       customer interactions in multiple languages. Personalized,
+//       responsive, always on. AI-powered CRM & Sales Optimization:
+//       Predict customer behavior, automate follow-ups, and close more
+//       deals. AI-driven Marketing Automation: Hyper-personalized email
+//       and ad campaigns powered by machine learning. AI-based Customer
+//       Insights & Analytics: Understand your customers like never
+//       before. Make data-driven decisions in real time.`,
+//       image: "/hero-image.png",
+//     },
+//     {
+//       id: 2,
+//       title: "Smart Virtual Assistants",
+//       description: `Transform customer service with 24/7 AI-powered assistants.
+//       Instantly respond to queries, book appointments, and streamline
+//       support.`,
+//       image: "/hero-image.png",
+//     },
+//     {
+//       id: 3,
+//       title: "Sales Forecasting Tools",
+//       description: `Use AI to predict customer buying patterns and optimize sales
+//       funnels. Make informed decisions backed by data trends.`,
+//       image: "/hero-image.png",
+//     },
+//     {
+//       id: 4,
+//       title: "AI-Driven Analytics",
+//       description: `Visualize real-time data to monitor performance, spot trends, and
+//       optimize strategies. AI that interprets data like a pro.`,
+//       image: "/hero-image.png",
+//     },
+//     {
+//       id: 5,
+//       title: "Marketing Automation",
+//       description: `Let AI personalize your campaigns. Target the right audience with
+//       the right message at the right time.`,
+//       image: "/hero-image.png",
+//     },
+//     {
+//       id: 6,
+//       title: "Language AI for Global Reach",
+//       description: `Break barriers with multilingual chatbots, translation tools, and
+//       global customer support—all powered by AI.`,
+//       image: "/hero-image.png",
+//     },
+//   ];
+
+//   const targetRef = useRef(null);
+//   const { scrollY } = useScroll({
+//     target: targetRef,
+//     offset: ["start start", "end end"],
+//   });
+
+//   // For debugging purposes
+//   useMotionValueEvent(scrollY, "change", (latest) => {
+//     console.log("Scroll Y:", scrollY.get());
+//   });
+
+//   // Transform for the header
+//   const scale = useTransform(scrollY, [0, 500], [1, 0.8]);
+//   const opacity = useTransform(scrollY, [0, 100], [1, 0]);
+
+//   return (
+//     <div ref={targetRef} className="relative">
+//       <motion.div
+//         style={{ scale, opacity }}
+//         className="h-[500px] sticky top-0 flex items-end text-8xl lg:text-[160px] uppercase lg:leading-[140px] px-36 overflow-clip">
+//         <h1 className="text-white font-bold">Our Services</h1>
+//         </motion.div>
+
+//         <div ref={targetRef} className="relative container mx-auto px-4">
+//         {services.map((service, idx) => (
+//           <div
+//             key={service.id}
+//             className="h-screen sticky top-0"
+//             // style={{
+//             //   position: "sticky",
+//             //   top: `${idx * 10}vh`,
+//             //   zIndex: services.length - idx,
+//             // }}
+//           >
+//             <div className="w-full max-w-5xl bg-white/10 backdrop-blur-sm rounded-2xl p-8 shadow-xl"
+//             >
+//               <div className="flex flex-col md:flex-row gap-8 items-center">
+//                 {idx % 2 === 0 ? (
+//                   <>
+//                     <div className="flex-1 space-y-4">
+//                       <h2 className="text-2xl font-bold text-white">{service.title}</h2>
+//                       <p className="text-gray-200 text-base md:text-lg">{service.description}</p>
+//                     </div>
+//                     <div className="flex-shrink-0">
+//                       <Image
+//                         src={service.image}
+//                         alt={service.title}
+//                         width={300}
+//                         height={300}
+//                         className="rounded-2xl"
+//                       />
+//                     </div>
+//                   </>
+//                 ) : (
+//                   <>
+//                     <div className="flex-shrink-0">
+//                       <Image
+//                         src={service.image}
+//                         alt={service.title}
+//                         width={300}
+//                         height={300}
+//                         className="rounded-2xl"
+//                       />
+//                     </div>
+//                     <div className="flex-1 space-y-4">
+//                       <h2 className="text-2xl font-bold text-white">{service.title}</h2>
+//                       <p className="text-gray-200 text-base md:text-lg">{service.description}</p>
+//                     </div>
+//                   </>
+//                 )}
+//               </div>
+//             </div>
+//             </div>
+//           ))}
+
+//       </div>
+//       </div>
+//   );
+// }
+
+// "use client";
+// import React from "react";
+// import { useScroll, motion, useMotionValueEvent, useTransform } from "framer-motion";
+// // import Image from "next/image";
+// import Card from "../components/card";
+// import { useRef } from "react";
+
+// function ServicesPage() {
+
+  
+//   const services = [
+//     {
+//       id: 1,
+//       title: "AI-Powered Business Solutions",
+//       description: `Seamless automation. AI Chatbots & Virtual Assistants: Automate
+//           customer interactions in multiple languages. Personalized,
+//           responsive, always on. AI-powered CRM & Sales Optimization:
+//           Predict customer behavior, automate follow-ups, and close more
+//           deals. AI-driven Marketing Automation: Hyper-personalized email
+//           and ad campaigns powered by machine learning. AI-based Customer
+//           Insights & Analytics: Understand your customers like never
+//           before. Make data-driven decisions in real time.`,
+//       image: "/hero-image.png",
+//     },
+//     {
+//       id: 2,
+//       title: "Smart Virtual Assistants",
+//       description: `Transform customer service with 24/7 AI-powered assistants.
+//           Instantly respond to queries, book appointments, and streamline
+//           support.`,
+//       image: "/hero-image.png",
+//     },
+//     {
+//       id: 3,
+//       title: "Sales Forecasting Tools",
+//       description: `Use AI to predict customer buying patterns and optimize sales
+//           funnels. Make informed decisions backed by data trends.`,
+//       image: "/hero-image.png",
+//     },
+//   ];
+
+//   const targetRef = useRef(null);
+
+//   const { scrollY } = useScroll({
+//     target: targetRef,
+//     offset: ["start start", "end end"],
+//   });
+
+
+//   useMotionValueEvent(scrollY, "change", () => {
+//     console.log(scrollY.get())
+//   });
+
+//   const cardTimeline = services.map((_, i) => {
+//     const start = 200 + i * window.innerHeight;
+//     const end = 500  + (i+i) * window.innerHeight; 
+
+//     return [start, end];
+//   })
+
+//   const timeline = [(0,500), ...cardTimeline]
+
+//   const animation = timeline.map((data) => (
+//     {
+//       scale : useTransform(scrollY, data, [1, 0.8]),
+//       opacity : useTransform(scrollY, data, [1, 0])
+//     }
+//   ))
+
+
+//   return (
+//     <div ref={targetRef} className="relative">
+//       <div className="">
+//         <motion.div 
+//           style={{scale : animation[0].scale, opacity: animation[0].opacity}} 
+//           className="h-[200px] fixed top-0 flex items-end text-8xl lg:text-[160px] uppercase lg:leading-[140px] px-36 overflow-clip"
+//           >
+//           <h1 className="text-5xl font-bold">Our Services</h1>
+//         </motion.div>
+//       </div>
+
+//       {services.map((service, i) => (
+//         <motion.div
+//           key={service.id}
+//           style={{scale : animation[i+1].scale, opacity: animation[i+1].opacity}} 
+//           className="h-dvh sticky top-0 flex pt-40 items-center justify-center px-4"
+//         >
+//           <Card
+//             title={service.title}
+//             description={service.description}
+//             image={service.image}
+//             reverse={i % 2 !== 0}
+//           />
+//         </motion.div>
+//       ))}
+//     </div>
+//   );
+// }
+
+// export default ServicesPage;

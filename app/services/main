@@ -1,0 +1,86 @@
+// "use client";
+// import React, { useRef } from "react";
+// import { useScroll, motion, useMotionValueEvent, useTransform } from "framer-motion";
+// // import Image from "next/image";
+// import Card from "../components/card";
+
+// function ServicesPage() {
+//   const services = [
+//     {
+//       id: 1,
+//       title: "AI-Powered Business Solutions",
+//       description: `Seamless automation. AI Chatbots & Virtual Assistants: Automate
+//         customer interactions in multiple languages. Personalized,
+//         responsive, always on. AI-powered CRM & Sales Optimization:
+//         Predict customer behavior, automate follow-ups, and close more
+//         deals. AI-driven Marketing Automation: Hyper-personalized email
+//         and ad campaigns powered by machine learning. AI-based Customer
+//         Insights & Analytics: Understand your customers like never
+//         before. Make data-driven decisions in real time.`,
+//       image: "/hero-image.png",
+//     },
+//     {
+//       id: 2,
+//       title: "Smart Virtual Assistants",
+//       description: `Transform customer service with 24/7 AI-powered assistants.
+//         Instantly respond to queries, book appointments, and streamline
+//         support.`,
+//       image: "/hero-image.png",
+//     },
+//     {
+//       id: 3,
+//       title: "Sales Forecasting Tools",
+//       description: `Use AI to predict customer buying patterns and optimize sales
+//         funnels. Make informed decisions backed by data trends.`,
+//       image: "/hero-image.png",
+//     },
+//   ];
+
+//   const targetRef = useRef(null);
+//   const { scrollY } = useScroll({
+//     target: targetRef,
+//     offset: ["start start", "end end"],
+//   });
+
+//   useMotionValueEvent(scrollY, "change", () => {
+//     console.log(scrollY.get());
+//   });
+
+//   return (
+//     <div ref={targetRef} className="min-h-screen py-16 px-4">
+//       <div className="h-[300] sticky top-0">
+//         <h1 className="text-2xl lg:text-4xl font-bold text-center mb-16">Our Services</h1>
+//       </div>
+//       <div className="max-w-6xl mx-auto space-y-24">
+//         {services.map((service, idx) => {
+//           // Create unique scroll ranges for each card
+//           const scrollRange = [(idx * 500), ((idx + 1) * 500)];
+          
+//           return (
+//             <motion.div
+//               key={service.id}
+//               style={{
+//                 scale: useTransform(scrollY, scrollRange, [1, 0.8]),
+//                 opacity: useTransform(scrollY, scrollRange, [1, 0.3])
+//               }}
+//               className="w-full sticky top-0 h-[auto]"
+//             >
+//               <Card 
+//                 title={service.title}
+//                 description={service.description}
+//                 image={service.image}
+//               />
+//             </motion.div>
+//           );
+//         })}
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default ServicesPage;
+
+
+
+
+

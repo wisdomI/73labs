@@ -1,0 +1,44 @@
+import React from 'react';
+
+const Background = ({ children }) => {
+  return (
+    <div className="relative min-h-screen w-full bg-black overflow-hidden rounded-lg">
+      {/* Custom radial gradients using absolute positioning */}
+      <div 
+          className="fixed -top-20 -left-80 w-[50vw] h-[100vh] rounded-full"
+          style={{
+            background: 'radial-gradient(circle at center, rgba(158, 72, 27, 0.6) 0%, rgba(61, 26, 15, 0.1) 50%, transparent 100%)',
+          }}
+      > </div>
+      <div 
+        className="fixed -top-140 left-80 w-[50vw] h-[100vh] rounded-full"
+        style={{
+          background: 'radial-gradient(circle at center, rgba(158, 72, 27, 0.6) 20%, rgba(61, 26, 15, 0.1) 50%, transparent 100%)',
+        }}
+      ></div>
+      
+      {/* Bottom-right gradient */}
+      <div 
+        className="fixed -bottom-50 -right-40 w-[60vw] h-[100vh] rounded-full"
+        style={{
+          background: 'radial-gradient(circle at center, rgba(158, 72, 27, 0.6) 0%, rgba(61, 26, 15, 0.1) 50%, transparent 100%)',
+        }}
+      ></div>
+      
+      {/* Vignette effect */}
+      {/* <div 
+        className="fixed inset-0"
+        style={{
+          background: 'radial-gradient(circle at center, transparent 30%, transparent 60%, rgba(0, 0, 0, 0.6) 100%)',
+        }}
+      ></div> */}
+      
+      {/* Content */}
+      <div className="relative z-10">
+        {children}
+      </div>
+    </div>
+  );
+};
+
+export default Background;
